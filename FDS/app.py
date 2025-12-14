@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import joblib
 
-model = joblib.load("fraud_detection_pipeline.pkl")
+model = joblib.load("FDS/fraud_detection_pipeline.pkl")
 
 st.title("Fraud Detection Prediction")
 st.markdown("Please enter the transaction details below:")
@@ -31,4 +31,5 @@ if st.button("Predict"):
     if prediction == 1:
         st.error("The transaction is predicted to be FRAUDULENT.")
     else:
+
         st.success("The transaction is predicted to be LEGITIMATE.")
